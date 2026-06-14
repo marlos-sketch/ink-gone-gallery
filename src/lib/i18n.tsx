@@ -35,7 +35,7 @@ export const translations = {
   },
   services: {
     eyebrow: { pt: "Nossos serviços", en: "Our services" },
-    title: { pt: "Cuidado especializado\u00a0\u00a0\u00a0\npara cada caso", en: "Specialized care for every case" },
+    title: { pt: "Cuidado especializado\u00a0\u00a0\u00a0\u00a0\npara cada caso", en: "Specialized care for every case" },
     subtitle: {
       pt: "Avaliamos sua pele e o pigmento para criar o protocolo ideal de remoção.",
       en: "We assess your skin and pigment to create the ideal removal protocol.",
