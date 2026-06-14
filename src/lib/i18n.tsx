@@ -65,7 +65,7 @@ export const translations = {
       en: "Results from clients treated at Sr & Sra Mesquita.",
     },
     tattooCaption: { pt: "Remoção de tatuagem — antebraço", en: "Tattoo removal — forearm" },
-    microCaption: { pt: "Remoção de micropigmentação — sobrancelhas", en: "Micropigmentation removal — eyebrows" },
+    microCaption: { pt: "Remoção demicropigmentação\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0sobrancelhas", en: "Micropigmentation removal — eyebrows" },
     tattooTag: { pt: "Tatuagem", en: "Tattoo" },
     microTag: { pt: "Micropigmentação", en: "Micropigmentation" },
     disclaimer: {
