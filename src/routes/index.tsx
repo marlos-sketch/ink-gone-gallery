@@ -63,6 +63,7 @@ function Index() {
         <WhyUs />
         <Testimonials />
         <Faq />
+        <ContactForm />
         <Contact />
       </main>
       <Footer />
