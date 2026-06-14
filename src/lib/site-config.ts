@@ -8,7 +8,7 @@ export const siteConfig = {
   instagramHandle: "srsramesquita",
   instagramUrl: "https://instagram.com/srsramesquita",
   email: "contato@srsramesquita.com",
-  address: "Av. Exemplo, 1000 — São Paulo, SP",
+  address: "Rua Ezequiel Freire, 192 — São Paulo, SP",
   hours: {
     pt: "Seg a Sáb: 9h às 19h",
     en: "Mon to Sat: 9am to 7pm",
