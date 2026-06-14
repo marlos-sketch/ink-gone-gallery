@@ -35,7 +35,7 @@ export const translations = {
   },
   services: {
     eyebrow: { pt: "Nossos serviços", en: "Our services" },
-    title: { pt: "Cuidado especializado para cada caso", en: "Specialized care for every case" },
+    title: { pt: "Cuidado especializado\u00a0\npara cada caso", en: "Specialized care for every case" },
     subtitle: {
       pt: "Avaliamos sua pele e o pigmento para criar o protocolo ideal de remoção.",
       en: "We assess your skin and pigment to create the ideal removal protocol.",
@@ -75,7 +75,7 @@ export const translations = {
   },
   process: {
     eyebrow: { pt: "Como funciona", en: "How it works" },
-    title: { pt: "Um processo seguro, do início ao fim", en: "A safe process, from start to finish" },
+    title: { pt: "Um processo seguro,\u00a0\ndo início ao fim", en: "A safe process, from start to finish" },
     step1Title: { pt: "Avaliação", en: "Assessment" },
     step1Desc: { pt: "Analisamos o pigmento, a pele e o histórico para montar seu plano.", en: "We analyze pigment, skin and history to build your plan." },
     step2Title: { pt: "Sessões", en: "Sessions" },
@@ -87,7 +87,7 @@ export const translations = {
   },
   why: {
     eyebrow: { pt: "Por que a Sr & Sra Mesquita", en: "Why Sr & Sra Mesquita" },
-    title: { pt: "Cuidado premium em um ambiente acolhedor", en: "Premium care in a welcoming space" },
+    title: { pt: "Cuidado premium\u00a0\nEm um ambiente acolhedor", en: "Premium care in a welcoming space" },
     p1: {
       pt: "Unimos técnica, segurança e um atendimento atencioso para que sua experiência de remoção seja confortável do começo ao fim.",
       en: "We combine technique, safety and attentive care so your removal experience is comfortable from start to finish.",
