@@ -75,7 +75,7 @@ export const translations = {
   },
   process: {
     eyebrow: { pt: "Como funciona", en: "How it works" },
-    title: { pt: "Um processo seguro,\u00a0\ndo início ao fim", en: "A safe process, from start to finish" },
+    title: { pt: "\u00a0 \u00a0 \u00a0 \u00a0 Um processo seguro,\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0do início ao fim", en: "A safe process, from start to finish" },
     step1Title: { pt: "Avaliação", en: "Assessment" },
     step1Desc: { pt: "Analisamos o pigmento, a pele e o histórico para montar seu plano.", en: "We analyze pigment, skin and history to build your plan." },
     step2Title: { pt: "Sessões", en: "Sessions" },
