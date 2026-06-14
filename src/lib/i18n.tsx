@@ -87,7 +87,7 @@ export const translations = {
   },
   why: {
     eyebrow: { pt: "Por que a Sr & Sra Mesquita", en: "Why Sr & Sra Mesquita" },
-    title: { pt: "Cuidado premium\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Em um ambiente acolhedor", en: "Premium care in a welcoming space" },
+    title: { pt: "Cuidado premium\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Em um ambiente\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 acolhedor", en: "Premium care in a welcoming space" },
     p1: {
       pt: "Unimos técnica, segurança e um atendimento atencioso para que sua experiência de remoção seja confortável do começo ao fim.",
       en: "We combine technique, safety and attentive care so your removal experience is comfortable from start to finish.",
