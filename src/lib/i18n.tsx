@@ -24,7 +24,7 @@ export const translations = {
     eyebrow: { pt: "Remoção de tatuagem & micropigmentação", en: "Tattoo & micropigmentation removal" },
     title: { pt: "Sua pele renovada,\nresultados que se veem", en: "Renewed skin,\nresults you can see" },
     subtitle: {
-      pt: "Especialistas em remoção segura de tatuagens e micropigmentação. Tecnologia avançada, protocolo personalizado e o cuidado premium da Sr & Sra Mesquita.",
+      pt: "Especialistas em remoção segura de tatuagens e micropigmentação. Tecnologia avançada, protocolo personalizado e o cuidado premium da\n\u00a0Sr & Sra Mesquita.",
       en: "Specialists in safe removal of tattoos and micropigmentation. Advanced technology, personalized protocol and the premium care of Sr & Sra Mesquita.",
     },
     ctaPrimary: { pt: "Agendar avaliação", en: "Book a consultation" },
