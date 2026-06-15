@@ -3,6 +3,7 @@ import { I18nProvider } from "@/lib/i18n";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
+import { Procedures } from "@/components/site/Procedures";
 import { Results } from "@/components/site/Results";
 import { Process } from "@/components/site/Process";
 import { WhyUs } from "@/components/site/WhyUs";
@@ -59,6 +60,7 @@ function Index() {
       <main>
         <Hero />
         <Services />
+        <Procedures />
         <Results />
         <Process />
         <WhyUs />
