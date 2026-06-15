@@ -11,6 +11,7 @@ const links = [
   { id: "procedimentos", key: "procedures" as const, hasMenu: true },
   { id: "resultados", key: "results" as const },
   { id: "processo", key: "process" as const },
+  { id: "depoimentos", key: "testimonials" as const, external: siteConfig.googleMapsUrl },
   { id: "contato", key: "contact" as const },
 ];
 
