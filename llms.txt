@@ -1,0 +1,13 @@
+# Sr & Sra Mesquita — Beauty / Clinic
+
+> Clínica especializada em remoção de tatuagem e micropigmentação a laser, com atendimento premium em São Paulo, SP. Também oferecemos procedimentos estéticos para realçar sua beleza natural.
+
+## Pages
+
+- [/](/): Página inicial — apresenta os serviços principais (remoção de tatuagem e micropigmentação), resultados reais, processo de trabalho, depoimentos de clientes, perguntas frequentes e formulário de contato via WhatsApp.
+- [/procedimentos/botox](/procedimentos/botox): Botox — suavização de rugas e linhas de expressão, prevenção do envelhecimento e resultado natural.
+- [/procedimentos/micropigmentacao-sobrancelha](/procedimentos/micropigmentacao-sobrancelha): Micropigmentação de sobrancelha — design personalizado, fios realistas e sobrancelhas simétricas.
+- [/procedimentos/micropigmentacao-labial](/procedimentos/micropigmentacao-labial): Micropigmentação labial — cor natural, correção de assimetrias e lábios mais definidos.
+- [/procedimentos/preenchimento-labial](/procedimentos/preenchimento-labial): Preenchimento labial — volume, hidratação e contorno dos lábios.
+- [/procedimentos/harmonizacao-facial](/procedimentos/harmonizacao-facial): Harmonização facial — equilíbrio das proporções do rosto com preenchimentos e bioestimuladores.
+- [/procedimentos/bioestimulador-colageno](/procedimentos/bioestimulador-colageno): Bioestimulador de colágeno — firmeza da pele, rejuvenescimento e resultados progressivos.
