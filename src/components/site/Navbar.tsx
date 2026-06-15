@@ -116,7 +116,8 @@ export function Navbar() {
             {links.map((l) => (
               <div key={l.id}>
                 <a
-                  href={`/#${l.id}`}
+                  href={l.external || `/#${l.id}`}
+                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onClick={() => setOpen(false)}
                   className="block py-2.5 text-sm uppercase tracking-[0.16em] text-foreground/80"
                 >
