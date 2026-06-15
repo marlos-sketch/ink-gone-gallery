@@ -19,6 +19,40 @@ export const translations = {
     about: { pt: "Sobre", en: "About" },
     contact: { pt: "Contato", en: "Contact" },
     book: { pt: "Agendar avaliação", en: "Book a consultation" },
+    procedures: { pt: "Procedimentos", en: "Procedures" },
+  },
+  procedures: {
+    eyebrow: { pt: "Procedimentos estéticos", en: "Aesthetic procedures" },
+    title: {
+      pt: "Outros cuidados para a sua beleza",
+      en: "Other treatments for your beauty",
+    },
+    subtitle: {
+      pt: "Além da remoção, oferecemos procedimentos estéticos para realçar sua naturalidade.",
+      en: "Beyond removal, we offer aesthetic procedures to enhance your natural beauty.",
+    },
+    learnMore: { pt: "Saiba mais", en: "Learn more" },
+    cta: { pt: "Falar no WhatsApp", en: "Chat on WhatsApp" },
+    backHome: { pt: "Voltar ao início", en: "Back to home" },
+    benefitsEyebrow: { pt: "Benefícios", en: "Benefits" },
+    benefitsTitle: {
+      pt: "O que esse procedimento proporciona",
+      en: "What this procedure delivers",
+    },
+    stepsEyebrow: { pt: "Como funciona", en: "How it works" },
+    stepsTitle: { pt: "O passo a passo", en: "Step by step" },
+    bookTitle: {
+      pt: "Pronta para agendar?",
+      en: "Ready to book?",
+    },
+    bookSubtitle: {
+      pt: "Fale conosco no WhatsApp e tire todas as suas dúvidas.",
+      en: "Chat with us on WhatsApp to clear all your doubts.",
+    },
+    othersEyebrow: {
+      pt: "Conheça também",
+      en: "Also explore",
+    },
   },
   hero: {
     eyebrow: { pt: "Remoção de tatuagem & micropigmentação", en: "Tattoo & micropigmentation removal" },
