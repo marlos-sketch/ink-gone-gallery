@@ -11,6 +11,7 @@ const links = [
   { id: "procedimentos", key: "procedures" as const, hasMenu: true },
   { id: "resultados", key: "results" as const },
   { id: "processo", key: "process" as const },
+  { id: "depoimentos", key: "testimonials" as const, external: siteConfig.googleMapsUrl },
   { id: "contato", key: "contact" as const },
 ];
 
@@ -68,7 +69,8 @@ export function Navbar() {
             ) : (
               <a
                 key={l.id}
-                href={`/#${l.id}`}
+                href={l.external || `/#${l.id}`}
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="group relative text-xs font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:text-foreground"
               >
                 {t(l.key)}
@@ -114,7 +116,8 @@ export function Navbar() {
             {links.map((l) => (
               <div key={l.id}>
                 <a
-                  href={`/#${l.id}`}
+                  href={l.external || `/#${l.id}`}
+                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onClick={() => setOpen(false)}
                   className="block py-2.5 text-sm uppercase tracking-[0.16em] text-foreground/80"
                 >

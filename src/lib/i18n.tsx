@@ -20,6 +20,7 @@ export const translations = {
     contact: { pt: "Contato", en: "Contact" },
     book: { pt: "Agendar avaliação", en: "Book a consultation" },
     procedures: { pt: "Procedimentos", en: "Procedures" },
+    testimonials: { pt: "Depoimentos", en: "Testimonials" },
   },
   procedures: {
     eyebrow: { pt: "Procedimentos estéticos", en: "Aesthetic procedures" },
