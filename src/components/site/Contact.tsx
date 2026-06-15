@@ -62,7 +62,12 @@ export function Contact() {
                     <p className="text-primary-foreground">{siteConfig.hours[lang]}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 sm:justify-center">
+                <a
+                  href={`https://www.google.com/maps/place/?q=place_id:ChIJB2YvNDv3zpQRScehZSCb9CA`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 transition-colors hover:text-gold sm:justify-center"
+                >
                   <MapPin size={20} className="text-gold" />
                   <div>
                     <p className="text-[0.65rem] uppercase tracking-widest text-primary-foreground/60">
@@ -70,7 +75,19 @@ export function Contact() {
                     </p>
                     <p className="text-primary-foreground">{siteConfig.address}</p>
                   </div>
-                </div>
+                </a>
+              </div>
+
+              <div className="relative mt-10 overflow-hidden rounded-2xl border border-primary-foreground/15">
+                <iframe
+                  title="Sr & Sra Mesquita Beauty Clinic — localização"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(siteConfig.address)}&output=embed`}
+                  width="100%"
+                  height="320"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="block w-full border-0"
+                />
               </div>
             </div>
           </div>
