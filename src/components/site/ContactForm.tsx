@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { z } from "zod";
+import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
 import { Reveal } from "./Reveal";
 import { useI18n, translations } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/site-config";
+import { saveContactQuestion } from "@/lib/contact.functions";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -15,20 +18,23 @@ const schema = z.object({
 type FieldErrors = Partial<Record<keyof z.infer<typeof schema>, boolean>>;
 
 const baseField =
-  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold";
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-gold sm:text-sm";
 
 export function ContactForm() {
   const { lang } = useI18n();
   const t = translations.form;
+  const saveQuestion = useServerFn(saveContactQuestion);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [question, setQuestion] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
     const result = schema.safeParse({ name, phone, email, question });
     if (!result.success) {
       const fieldErrors: FieldErrors = {};
@@ -39,7 +45,19 @@ export function ContactForm() {
       return;
     }
     setErrors({});
+    setSubmitting(true);
     const d = result.data;
+
+    // Salva no banco em paralelo (falha silenciosa — não bloqueia o WhatsApp)
+    try {
+      const saved = await saveQuestion({ data: { ...d, lang, source: "site-form" } });
+      if (saved?.ok) {
+        toast.success(lang === "pt" ? "Pergunta registrada!" : "Question received!");
+      }
+    } catch (err) {
+      console.warn("Could not save question", err);
+    }
+
     const message = [
       t.waGreeting[lang],
       "",
@@ -50,11 +68,12 @@ export function ContactForm() {
       `${t.waQuestion[lang]}: ${d.question}`,
     ].join("\n");
     window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+    setSubmitting(false);
   };
 
   return (
     <section id="duvidas" className="py-20 md:py-28">
-      <div className="mx-auto max-w-2xl px-5 md:px-10">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 md:px-10">
         <Reveal>
           <div className="text-center">
             <p className="mb-4 text-xs font-semibold uppercase tracking-luxe text-gold">
@@ -73,7 +92,8 @@ export function ContactForm() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="mt-10 rounded-[2rem] border border-gold/30 bg-card p-6 md:p-9"
+            className="mt-10 rounded-[2rem] border border-gold/30 bg-card p-5 sm:p-6 md:p-9"
+            aria-live="polite"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="flex flex-col gap-1.5">
@@ -142,9 +162,10 @@ export function ContactForm() {
 
             <button
               type="submit"
-              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary transition-all hover:opacity-90"
+              disabled={submitting}
+              className="mt-7 inline-flex min-h-[3rem] w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary transition-all hover:opacity-90 disabled:opacity-60"
             >
-              <Send size={17} />
+              {submitting ? <Loader2 size={17} className="animate-spin" /> : <Send size={17} />}
               {t.submit[lang]}
             </button>
           </form>
