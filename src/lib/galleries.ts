@@ -24,10 +24,10 @@ export type Gallery = {
 export const galleries: Gallery[] = [
   {
     slug: "remocao-tatuagem",
-    name: { pt: "Remoção de Tatuagem", en: "Tattoo Removal" },
+    name: { pt: "Remoção de Micropigmentação", en: "Micropigmentation Removal" },
     intro: {
-      pt: "Veja por dentro o nosso protocolo de remoção a laser: tecnologia avançada, cuidado em cada disparo e o clareamento progressivo do pigmento — sem agredir a pele.",
-      en: "See our laser removal protocol up close: advanced technology, careful precision at every pulse and progressive pigment fading — without harming the skin.",
+      pt: "Veja por dentro o nosso protocolo de remoção a laser: tecnologia avançada, cuidado em cada disparo e o clareamento progressivo do pigmento — sem agredir a pele e preservando a saude does pelos.",
+      en: "See our laser removal protocol up close: advanced technology, careful precision at every pulse and progressive pigment fading — without harming the skin and preserving hair health.",
     },
     whatsappMessage: {
       pt: "Olá! Vi a galeria de remoção no site e gostaria de agendar uma avaliação.",
