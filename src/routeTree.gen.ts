@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProcedimentosSlugRouteImport } from './routes/procedimentos.$slug'
+import { Route as GaleriaSlugRouteImport } from './routes/galeria.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -34,17 +35,24 @@ const ProcedimentosSlugRoute = ProcedimentosSlugRouteImport.update({
   path: '/procedimentos/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GaleriaSlugRoute = GaleriaSlugRouteImport.update({
+  id: '/galeria/$slug',
+  path: '/galeria/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/galeria/$slug': typeof GaleriaSlugRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/galeria/$slug': typeof GaleriaSlugRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,38 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/galeria/$slug': typeof GaleriaSlugRoute
   '/procedimentos/$slug': typeof ProcedimentosSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/robots.txt' | '/sitemap.xml' | '/procedimentos/$slug'
+  fullPaths:
+    | '/'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/galeria/$slug'
+    | '/procedimentos/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/robots.txt' | '/sitemap.xml' | '/procedimentos/$slug'
-  id: '__root__' | '/' | '/robots.txt' | '/sitemap.xml' | '/procedimentos/$slug'
+  to:
+    | '/'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/galeria/$slug'
+    | '/procedimentos/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/galeria/$slug'
+    | '/procedimentos/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  GaleriaSlugRoute: typeof GaleriaSlugRoute
   ProcedimentosSlugRoute: typeof ProcedimentosSlugRoute
 }
 
@@ -99,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcedimentosSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galeria/$slug': {
+      id: '/galeria/$slug'
+      path: '/galeria/$slug'
+      fullPath: '/galeria/$slug'
+      preLoaderRoute: typeof GaleriaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -106,18 +139,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  GaleriaSlugRoute: GaleriaSlugRoute,
   ProcedimentosSlugRoute: ProcedimentosSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
