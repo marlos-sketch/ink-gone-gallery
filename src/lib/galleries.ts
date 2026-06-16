@@ -3,7 +3,6 @@
 
 import type { Bilingual } from "./procedures";
 
-import tatuagemFoto1 from "@/assets/galeria/tatuagem-laser-1.jpg.asset.json";
 import sobrancelhaVideo from "@/assets/galeria/sobrancelha-despigmentacao.mp4.asset.json";
 import sobrancelha1 from "@/assets/galeria/sobrancelha-antes-depois-1.jpg.asset.json";
 import sobrancelha2 from "@/assets/galeria/sobrancelha-antes-depois-2.jpg.asset.json";
@@ -35,14 +34,6 @@ export const galleries: Gallery[] = [
       en: "Hello! I saw the removal gallery on the website and would like to book an assessment.",
     },
     media: [
-      {
-        type: "image",
-        src: tatuagemFoto1.url,
-        caption: {
-          pt: "Aplicação do laser sobre a tatuagem",
-          en: "Laser application over the tattoo",
-        },
-      },
       {
         type: "video",
         src: sobrancelhaVideo.url,
