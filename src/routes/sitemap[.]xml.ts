@@ -19,6 +19,8 @@ const PROCEDURE_SLUGS = [
   "bioestimulador-colageno",
 ];
 
+const GALLERY_SLUGS = ["remocao-tatuagem", "remocao-micropigmentacao"];
+
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -29,6 +31,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/procedimentos/${slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
+          })),
+          ...GALLERY_SLUGS.map((slug) => ({
+            path: `/galeria/${slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
           })),
         ];
 
