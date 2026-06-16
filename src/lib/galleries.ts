@@ -5,12 +5,11 @@ import type { Bilingual } from "./procedures";
 
 import tatuagemFoto1 from "@/assets/galeria/tatuagem-laser-1.jpg.asset.json";
 import tatuagemVideo from "@/assets/galeria/tatuagem-laser.mp4.asset.json";
-import microVideo from "@/assets/galeria/micro-laser.mp4.asset.json";
-import microAntesA from "@/assets/galeria/micro-antes-a.jpg.asset.json";
-import microProgressoA from "@/assets/galeria/micro-progresso-a.jpg.asset.json";
-import microAntesEt from "@/assets/galeria/micro-antes-et.jpg.asset.json";
-import microProgressoEt from "@/assets/galeria/micro-progresso-et.jpg.asset.json";
-import microFinalEt from "@/assets/galeria/micro-final-et.jpg.asset.json";
+import sobrancelhaVideo from "@/assets/galeria/sobrancelha-despigmentacao.mp4.asset.json";
+import sobrancelha1 from "@/assets/galeria/sobrancelha-antes-depois-1.jpg.asset.json";
+import sobrancelha2 from "@/assets/galeria/sobrancelha-antes-depois-2.jpg.asset.json";
+import sobrancelha3 from "@/assets/galeria/sobrancelha-antes-depois-3.jpg.asset.json";
+import sobrancelha4 from "@/assets/galeria/sobrancelha-antes-depois-4.jpg.asset.json";
 
 export type GalleryMedia =
   | { type: "image"; src: string; caption: Bilingual }
@@ -47,15 +46,6 @@ export const galleries: Gallery[] = [
         },
       },
       {
-        type: "video",
-        src: microVideo.url,
-        poster: microAntesA.url,
-        caption: {
-          pt: "Aplicação do laser sobre o pigmento",
-          en: "Laser application over the pigment",
-        },
-      },
-      {
         type: "image",
         src: tatuagemFoto1.url,
         caption: {
@@ -64,29 +54,45 @@ export const galleries: Gallery[] = [
         },
       },
       {
-        type: "image",
-        src: microAntesA.url,
-        caption: { pt: "Antes do tratamento", en: "Before treatment" },
+        type: "video",
+        src: sobrancelhaVideo.url,
+        poster: sobrancelha1.url,
+        caption: {
+          pt: "Despigmentação de sobrancelha a laser",
+          en: "Eyebrow laser depigmentation",
+        },
       },
       {
         type: "image",
-        src: microProgressoA.url,
-        caption: { pt: "Em progresso — clareamento visível", en: "In progress — visible fading" },
+        src: sobrancelha1.url,
+        caption: {
+          pt: "Antes e depois — despigmentação de sobrancelha",
+          en: "Before and after — eyebrow depigmentation",
+        },
       },
       {
         type: "image",
-        src: microAntesEt.url,
-        caption: { pt: "Antes — pigmento marcado", en: "Before — heavy pigment" },
+        src: sobrancelha2.url,
+        caption: {
+          pt: "Antes e depois — remoção de micropigmentação",
+          en: "Before and after — micropigmentation removal",
+        },
       },
       {
         type: "image",
-        src: microProgressoEt.url,
-        caption: { pt: "Após algumas sessões", en: "After a few sessions" },
+        src: sobrancelha3.url,
+        caption: {
+          pt: "Antes e depois — sobrancelha renovada",
+          en: "Before and after — renewed eyebrows",
+        },
       },
       {
         type: "image",
-        src: microFinalEt.url,
-        caption: { pt: "Resultado final — pele renovada", en: "Final result — renewed skin" },
+        src: sobrancelha4.url,
+        caption: {
+          pt: "Resultado final — pele e fios naturais",
+          en: "Final result — natural skin and brow hair",
+        },
       },
     ],
   },
