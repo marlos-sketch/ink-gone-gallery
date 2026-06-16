@@ -26,7 +26,7 @@ export const galleries: Gallery[] = [
     slug: "remocao-tatuagem",
     name: { pt: "Remoção de Micropigmentação", en: "Micropigmentation Removal" },
     intro: {
-      pt: "Veja por dentro o nosso protocolo de remoção a laser: tecnologia avançada, cuidado em cada disparo e o clareamento progressivo do pigmento — sem agredir a pele e preservando a saude does pelos.",
+      pt: "Veja por dentro o nosso protocolo de remoção a laser: tecnologia avançada, cuidado em cada disparo e o clareamento progressivo do pigmento — sem agredir a pele e preservando a saude dos pelos.",
       en: "See our laser removal protocol up close: advanced technology, careful precision at every pulse and progressive pigment fading — without harming the skin and preserving hair health.",
     },
     whatsappMessage: {
