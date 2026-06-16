@@ -68,6 +68,7 @@ export const translations = {
     bookSubtitle: {
       pt: "Agende sua avaliação no WhatsApp e monte o seu protocolo personalizado.",
       en: "Book your assessment on WhatsApp and build your personalized protocol.",
+    },
   },
   hero: {
     eyebrow: { pt: "Remoção de tatuagem & micropigmentação", en: "Tattoo & micropigmentation removal" },
