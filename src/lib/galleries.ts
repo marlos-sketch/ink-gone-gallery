@@ -29,12 +29,12 @@ export const galleries: Gallery[] = [
     slug: "remocao-tatuagem",
     name: { pt: "Remoção de Tatuagem", en: "Tattoo Removal" },
     intro: {
-      pt: "Veja por dentro o nosso protocolo de remoção de tatuagem a laser: tecnologia avançada e cuidado em cada disparo, respeitando o tempo da sua pele.",
-      en: "See our laser tattoo removal protocol up close: advanced technology and careful precision at every pulse, respecting your skin's natural pace.",
+      pt: "Veja por dentro o nosso protocolo de remoção a laser: tecnologia avançada, cuidado em cada disparo e o clareamento progressivo do pigmento — sem agredir a pele.",
+      en: "See our laser removal protocol up close: advanced technology, careful precision at every pulse and progressive pigment fading — without harming the skin.",
     },
     whatsappMessage: {
-      pt: "Olá! Vi a galeria de remoção de tatuagem no site e gostaria de agendar uma avaliação.",
-      en: "Hello! I saw the tattoo removal gallery on the website and would like to book an assessment.",
+      pt: "Olá! Vi a galeria de remoção no site e gostaria de agendar uma avaliação.",
+      en: "Hello! I saw the removal gallery on the website and would like to book an assessment.",
     },
     media: [
       {
@@ -47,6 +47,15 @@ export const galleries: Gallery[] = [
         },
       },
       {
+        type: "video",
+        src: microVideo.url,
+        poster: microAntesA.url,
+        caption: {
+          pt: "Aplicação do laser sobre o pigmento",
+          en: "Laser application over the pigment",
+        },
+      },
+      {
         type: "image",
         src: tatuagemFoto1.url,
         caption: {
@@ -54,33 +63,10 @@ export const galleries: Gallery[] = [
           en: "Laser application over the tattoo",
         },
       },
-    ],
-  },
-  {
-    slug: "remocao-micropigmentacao",
-    name: { pt: "Remoção de Micropigmentação", en: "Micropigmentation Removal" },
-    intro: {
-      pt: "Acompanhe a evolução real de clientes que removeram micropigmentações antigas — clareamento gradual, sem agredir a pele, devolvendo a naturalidade.",
-      en: "Follow the real progression of clients who removed old micropigmentations — gradual lightening, gentle on the skin, restoring a natural look.",
-    },
-    whatsappMessage: {
-      pt: "Olá! Vi a galeria de remoção de micropigmentação no site e gostaria de agendar uma avaliação.",
-      en: "Hello! I saw the micropigmentation removal gallery on the website and would like to book an assessment.",
-    },
-    media: [
-      {
-        type: "video",
-        src: microVideo.url,
-        poster: microAntesA.url,
-        caption: {
-          pt: "Sessão de remoção de micropigmentação",
-          en: "Micropigmentation removal session",
-        },
-      },
       {
         type: "image",
         src: microAntesA.url,
-        caption: { pt: "Antes — tatuagem letra A", en: "Before — letter A tattoo" },
+        caption: { pt: "Antes do tratamento", en: "Before treatment" },
       },
       {
         type: "image",
@@ -90,7 +76,7 @@ export const galleries: Gallery[] = [
       {
         type: "image",
         src: microAntesEt.url,
-        caption: { pt: "Antes — micropigmentação et", en: "Before — et micropigmentation" },
+        caption: { pt: "Antes — pigmento marcado", en: "Before — heavy pigment" },
       },
       {
         type: "image",

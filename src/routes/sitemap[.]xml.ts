@@ -19,7 +19,7 @@ const PROCEDURE_SLUGS = [
   "bioestimulador-colageno",
 ];
 
-const GALLERY_SLUGS = ["remocao-tatuagem", "remocao-micropigmentacao"];
+const GALLERY_SLUGS = ["remocao-tatuagem"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
