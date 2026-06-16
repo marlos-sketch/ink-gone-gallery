@@ -1,50 +1,26 @@
 ## Objetivo
+Na galeria "Remoção de Tatuagem" (`src/lib/galleries.ts`), remover apenas as fotos/vídeo de despigmentação de sobrancelha (assets `micro-*`) e substituir pelos novos arquivos enviados. Os itens de tatuagem a laser (`tatuagem-*`) permanecem.
 
-Tornar os 3 ícones da seção **"Nossos Serviços"** clicáveis. Ao clicar, o usuário vai para uma página de galeria dedicada ao serviço, com as fotos e vídeos enviados.
+## Passos
 
-## Mapeamento dos arquivos enviados
+1. **Upload dos novos assets** (CDN via `lovable-assets`) a partir de `/mnt/user-uploads/`:
+   - `IMG_6368.MOV` → `src/assets/galeria/sobrancelha-despigmentacao.mp4.asset.json`
+   - `photo_5012721679549009096_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-1.jpg.asset.json`
+   - `photo_5012721679549009099_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-2.jpg.asset.json`
+   - `photo_5012721679549009100_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-3.jpg.asset.json`
+   - `photo_5012721679549009101_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-4.jpg.asset.json`
 
-| Serviço | Mídia |
-|---|---|
-| Remoção de Tatuagem | `IMAGE_2026-06-16_17_51_39.jpg` (sessão de laser em andamento) + `IMG_0107.MP4` (vídeo do procedimento) |
-| Remoção de Micropigmentação | 4 fotos da evolução do "A" e do "et" (antes/durante/depois) + `FILE_2026-06-16_17_57_31.mp4` |
-| Avaliação Personalizada | Sem mídia nova — o botão rola até a seção de Contato (formulário/WhatsApp) |
+2. **Remover assets antigos** de despigmentação de sobrancelha via `delete_asset`:
+   - `micro-laser.mp4.asset.json`
+   - `micro-antes-a.jpg.asset.json`
+   - `micro-progresso-a.jpg.asset.json`
+   - `micro-antes-et.jpg.asset.json`
+   - `micro-progresso-et.jpg.asset.json`
+   - `micro-final-et.jpg.asset.json`
 
-> Se você preferir distribuir os 2 vídeos de outra forma ou adicionar mais arquivos, é só dizer depois — a estrutura suporta facilmente.
+3. **Atualizar `src/lib/galleries.ts`**:
+   - Trocar imports `micro*` pelos novos `sobrancelha*`
+   - Manter os 2 itens de tatuagem (vídeo + foto `tatuagem-*`) no topo
+   - Substituir os 6 itens `micro*` por: 1 vídeo novo + 4 fotos novas com legendas PT/EN apropriadas (ex.: "Antes e depois — despigmentação de sobrancelha")
 
-## Mudanças
-
-### 1. Upload das mídias
-Subir os 5 arquivos via `lovable-assets` para a CDN e gerar pointers em `src/assets/galeria/*.asset.json`.
-
-### 2. Nova rota `/galeria/$slug`
-Arquivo `src/routes/galeria.$slug.tsx` com:
-- Catálogo bilíngue PT/EN (`src/lib/galleries.ts`) contendo `remocao-tatuagem` e `remocao-micropigmentacao` — título, descrição curta, lista de imagens e vídeos.
-- Layout consistente com o resto do site (Navbar, Hero claro com título dourado, grid responsivo de imagens com lightbox simples, players de vídeo nativos `<video controls playsInline>`, CTA WhatsApp ao final, Footer + WhatsAppFloat).
-- `head()` com title/description/og próprios + canonical.
-- `notFoundComponent` e `errorComponent` (padrão das outras rotas).
-- Entrada nova no `sitemap.xml.ts` para os 2 slugs.
-
-### 3. Ícones clicáveis em `src/components/site/Services.tsx`
-- Trocar a `<div>` do ícone por um `<Link>` (ou `<a href="#contato">` para o caso "Avaliação") com aria-label, foco visível e hover dourado.
-- Cada item passa a ter um campo `href` (rota interna ou âncora).
-- Manter o link "Saber mais →" no rodapé do card apontando para a mesma galeria (mais descobrível que só o ícone).
-
-### 4. i18n
-Adicionar chaves novas em `src/lib/i18n.tsx` em `translations.gallery` (eyebrow, intros, "Veja em vídeo", "Antes / Depois", CTA, etc.) em PT e EN.
-
-## Detalhes técnicos
-
-- Rota nova respeita as regras do TanStack Start (flat naming, `createFileRoute`, sem editar `routeTree.gen.ts` — o plugin regenera).
-- Imagens carregadas com `loading="lazy"` e `decoding="async"`; vídeos com `preload="metadata"` e `poster` (usando 1 imagem do conjunto).
-- Sem hardcode de cores — uso dos tokens existentes (`gold`, `cream`, `border`, `muted-foreground`).
-- Sem alterações em backend, auth ou dados.
-
-## Arquivos afetados
-
-- Novo: `src/lib/galleries.ts`
-- Novo: `src/routes/galeria.$slug.tsx`
-- Novo: `src/assets/galeria/*.asset.json` (5 pointers)
-- Editado: `src/components/site/Services.tsx`
-- Editado: `src/lib/i18n.tsx`
-- Editado: `src/routes/sitemap[.]xml.ts`
+Nenhuma alteração em rotas, sitemap, componentes ou i18n.
