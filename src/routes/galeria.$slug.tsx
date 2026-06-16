@@ -19,7 +19,10 @@ export const Route = createFileRoute("/galeria/$slug")({
     }
     const title = `${g.name.pt} — Galeria — Sr & Sra Mesquita`;
     const desc = g.intro.pt;
-    const cover = g.media.find((m) => m.type === "image")?.src ?? g.media[0]?.poster;
+    const firstImage = g.media.find((m) => m.type === "image");
+    const firstVideo = g.media.find((m) => m.type === "video");
+    const cover =
+      firstImage?.src ?? (firstVideo && firstVideo.type === "video" ? firstVideo.poster : undefined);
     return {
       meta: [
         { title },
