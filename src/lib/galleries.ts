@@ -50,7 +50,7 @@ export const galleries: Gallery[] = [
         src: tatuagemVideo1.url,
         poster: tatuagem1.url,
         caption: {
-          pt: "Sessão de remoção de tatuagem a laser",
+          pt: "Sessão de remoção de tatuagem a laser    >>>>>> arraste para o lado >>>>>>",
           en: "Laser tattoo removal session",
         },
       },
