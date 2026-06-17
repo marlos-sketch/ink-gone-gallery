@@ -146,7 +146,7 @@ export const galleries: Gallery[] = [
         src: sobrancelhaVideo.url,
         poster: sobrancelha1.url,
         caption: {
-          pt: "Despigmentação de sobrancelha a laser        >>>>>>>>>>>>",
+          pt: "Despigmentação de sobrancelha a laser        >>>>>>  arraste para o lado >>>>>>",
           en: "Eyebrow laser depigmentation",
         },
       },
