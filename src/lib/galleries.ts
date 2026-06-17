@@ -146,7 +146,7 @@ export const galleries: Gallery[] = [
         src: sobrancelhaVideo.url,
         poster: sobrancelha1.url,
         caption: {
-          pt: "Despigmentação de sobrancelha a laser",
+          pt: "Despigmentação de sobrancelha a laser        >>>>>>>>>>>>",
           en: "Eyebrow laser depigmentation",
         },
       },
@@ -154,7 +154,7 @@ export const galleries: Gallery[] = [
         type: "image",
         src: sobrancelha1.url,
         caption: {
-          pt: "Antes e depois — despigmentação de sobrancelha",
+          pt: "Antes e depois — despigmentação de sobrancelha  ",
           en: "Before and after — eyebrow depigmentation",
         },
       },
