@@ -90,7 +90,7 @@ export const translations = {
       pt: "Avaliamos sua pele e o pigmento para criar o protocolo ideal de remoção.",
       en: "We assess your skin and pigment to create the ideal removal protocol.",
     },
-    tattooTitle: { pt: "Remoção de Micropigmentação", en: "Micropigmentation Removal" },
+    tattooTitle: { pt: "Remoção de Tatuagem", en: "Tattoo Removal" },
     tattooDesc: {
       pt: "Remoção gradual e segura de tatuagens de qualquer tamanho, cor e região do corpo, respeitando a sua pele.",
       en: "Gradual and safe removal of tattoos of any size, color and body area, respecting your skin.",
