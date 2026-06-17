@@ -31,7 +31,7 @@ export function Services() {
       title: t.microTitle[lang],
       desc: t.microDesc[lang],
       msg: translations.whatsappMessages.micro[lang],
-      href: { kind: "gallery", slug: "remocao-tatuagem" },
+      href: { kind: "gallery", slug: "remocao-micropigmentacao" },
     },
     {
       icon: ClipboardCheck,

@@ -7,6 +7,13 @@ import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { Reveal } from "@/components/site/Reveal";
 import { getGallery } from "@/lib/galleries";
 import { whatsappLink } from "@/lib/site-config";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/galeria/$slug")({
   beforeLoad: ({ params }) => {
@@ -129,43 +136,49 @@ function GalleryContent() {
       {/* Mídia */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5 md:px-10">
-          <div className="grid gap-6 md:grid-cols-2">
-            {g.media.map((m, i) => (
-              <Reveal key={i} delay={i * 80}>
-                <figure className="group overflow-hidden rounded-2xl border border-border bg-card">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
-                    {m.type === "image" ? (
-                      <img
-                        src={m.src}
-                        alt={m.caption[lang]}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <video
-                        src={m.src}
-                        poster={m.poster}
-                        controls
-                        playsInline
-                        preload="metadata"
-                        className="h-full w-full object-cover"
-                      />
-                    )}
-                    {m.type === "video" && (
-                      <span className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground backdrop-blur">
-                        <Play size={11} strokeWidth={2.5} />
-                        {t.videoTag[lang]}
-                      </span>
-                    )}
-                  </div>
-                  <figcaption className="px-5 py-4 text-sm text-muted-foreground">
-                    {m.caption[lang]}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+              <CarouselContent className="-ml-4">
+                {g.media.map((m, i) => (
+                  <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/2">
+                    <figure className="group overflow-hidden rounded-2xl border border-border bg-card">
+                      <div className="relative aspect-[4/5] w-full overflow-hidden bg-muted">
+                        {m.type === "image" ? (
+                          <img
+                            src={m.src}
+                            alt={m.caption[lang]}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                          />
+                        ) : (
+                          <video
+                            src={m.src}
+                            poster={m.poster}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="h-full w-full object-cover"
+                          />
+                        )}
+                        {m.type === "video" && (
+                          <span className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground backdrop-blur">
+                            <Play size={11} strokeWidth={2.5} />
+                            {t.videoTag[lang]}
+                          </span>
+                        )}
+                      </div>
+                      <figcaption className="px-5 py-4 text-sm text-muted-foreground">
+                        {m.caption[lang]}
+                      </figcaption>
+                    </figure>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </Reveal>
 
           <Reveal>
             <p className="mx-auto mt-10 max-w-2xl text-center text-xs text-muted-foreground">
