@@ -85,6 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Clínica especializada em remoção de tatuagem e micropigmentação a laser.",
       },
       { name: "author", content: "Sr & Sra Mesquita" },
+      { name: "google-site-verification", content: "googled11212b8e4473fee" },
       { property: "og:site_name", content: "Sr & Sra Mesquita" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
