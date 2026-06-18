@@ -78,24 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sr & Sra Mesquita — Beauty / Clinic" },
-      {
-        name: "description",
-        content:
-          "Clínica especializada em remoção de tatuagem e micropigmentação a laser.",
-      },
       { name: "author", content: "Sr & Sra Mesquita" },
       { name: "google-site-verification", content: "googled11212b8e4473fee" },
       { property: "og:site_name", content: "Sr & Sra Mesquita" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Sr & Sra Mesquita — Beauty / Clinic" },
-      { name: "twitter:title", content: "Sr & Sra Mesquita — Beauty / Clinic" },
-      { name: "description", content: "This app creates a landing page for a tattoo and micropigmentation removal clinic." },
-      { property: "og:description", content: "This app creates a landing page for a tattoo and micropigmentation removal clinic." },
-      { name: "twitter:description", content: "This app creates a landing page for a tattoo and micropigmentation removal clinic." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f165ae2-17d0-417b-958c-5251e477dadb/id-preview-c14ee290--f82099cb-0736-4714-8fc1-885c5767a1f7.lovable.app-1781651788770.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f165ae2-17d0-417b-958c-5251e477dadb/id-preview-c14ee290--f82099cb-0736-4714-8fc1-885c5767a1f7.lovable.app-1781651788770.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
