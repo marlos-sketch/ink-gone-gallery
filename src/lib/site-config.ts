@@ -15,6 +15,7 @@ export const siteConfig = {
     en: "Mon to Sat: 9am to 7pm",
   },
   googleMapsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJB2YvNDv3zpQRScehZSCb9CA",
+  googleReviewsUrl: "https://search.google.com/local/reviews?placeid=ChIJB2YvNDv3zpQRScehZSCb9CA",
 };
 
 export function whatsappLink(message: string) {
