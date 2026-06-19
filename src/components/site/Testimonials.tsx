@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { Reveal } from "./Reveal";
 import { useI18n, translations } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site-config";
 import { getGoogleReviews, type GoogleReview } from "@/lib/reviews.functions";
 
 export function Testimonials() {
