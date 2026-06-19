@@ -1,26 +1,25 @@
-## Objetivo
-Na galeria "Remoção de Tatuagem" (`src/lib/galleries.ts`), remover apenas as fotos/vídeo de despigmentação de sobrancelha (assets `micro-*`) e substituir pelos novos arquivos enviados. Os itens de tatuagem a laser (`tatuagem-*`) permanecem.
+## Contexto
 
-## Passos
+Atualmente o link "Depoimentos" no navbar está apontando para `siteConfig.googleMapsUrl`, que abre o Google Maps. O usuário quer que ele abra as avaliações/reviews dos clientes no Google.
 
-1. **Upload dos novos assets** (CDN via `lovable-assets`) a partir de `/mnt/user-uploads/`:
-   - `IMG_6368.MOV` → `src/assets/galeria/sobrancelha-despigmentacao.mp4.asset.json`
-   - `photo_5012721679549009096_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-1.jpg.asset.json`
-   - `photo_5012721679549009099_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-2.jpg.asset.json`
-   - `photo_5012721679549009100_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-3.jpg.asset.json`
-   - `photo_5012721679549009101_y.jpg` → `src/assets/galeria/sobrancelha-antes-depois-4.jpg.asset.json`
+## Alterações propostas
 
-2. **Remover assets antigos** de despigmentação de sobrancelha via `delete_asset`:
-   - `micro-laser.mp4.asset.json`
-   - `micro-antes-a.jpg.asset.json`
-   - `micro-progresso-a.jpg.asset.json`
-   - `micro-antes-et.jpg.asset.json`
-   - `micro-progresso-et.jpg.asset.json`
-   - `micro-final-et.jpg.asset.json`
+### 1. `src/lib/site-config.ts`
 
-3. **Atualizar `src/lib/galleries.ts`**:
-   - Trocar imports `micro*` pelos novos `sobrancelha*`
-   - Manter os 2 itens de tatuagem (vídeo + foto `tatuagem-*`) no topo
-   - Substituir os 6 itens `micro*` por: 1 vídeo novo + 4 fotos novas com legendas PT/EN apropriadas (ex.: "Antes e depois — despigmentação de sobrancelha")
+Adicionar uma nova propriedade `googleReviewsUrl` construída a partir do `googleMapsUrl` existente (extraíndo o Place ID) ou do Place ID já conhecido (`ChIJB2YvNDv3zpQRScehZSCb9CA`), apontando para:
 
-Nenhuma alteração em rotas, sitemap, componentes ou i18n.
+```
+https://search.google.com/local/reviews?placeid=ChIJB2YvNDv3zpQRScehZSCb9CA
+```
+
+### 2. `src/components/site/Navbar.tsx`
+
+Alterar o link "Depoimentos" (`depoimentos`) para usar a nova `googleReviewsUrl` no lugar de `googleMapsUrl`. Manter o comportamento de abrir em nova aba (`target="_blank"`, `rel="noopener noreferrer"`).
+
+### 3. `src/components/site/Testimonials.tsx` (verificar)
+
+Se houver algum CTA dentro da seção interna de depoimentos que atualmente leva ao Google Maps, considerar também redirecioná-lo para a URL de reviews para consistência.
+
+## Resultado 
+
+Clicar em "Depoimentos" no menu (desktop e mobile) abre diretamente a página de avaliações do Google da clínica em uma nova aba.
