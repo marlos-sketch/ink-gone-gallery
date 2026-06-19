@@ -3,6 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 export type GoogleReview = {
   authorName: string;
   authorPhoto: string | null;
+  authorUrl: string | null;
   rating: number;
   text: string;
   relativeTime: string;
@@ -73,6 +74,7 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(
           url?: string;
           reviews?: Array<{
             author_name: string;
+            author_url?: string;
             profile_photo_url?: string;
             rating: number;
             text: string;
@@ -101,6 +103,7 @@ export const getGoogleReviews = createServerFn({ method: "GET" }).handler(
         reviews: (r.reviews ?? []).slice(0, 6).map((rv) => ({
           authorName: rv.author_name,
           authorPhoto: rv.profile_photo_url ?? null,
+          authorUrl: rv.author_url ?? null,
           rating: rv.rating,
           text: rv.text,
           relativeTime: rv.relative_time_description,

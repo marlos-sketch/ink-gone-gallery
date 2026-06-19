@@ -19,9 +19,9 @@ export function Testimonials() {
 
   // Fallback (depoimentos placeholder) caso Google não esteja configurado / falhe
   const fallback: GoogleReview[] = [
-    { authorName: t.t1Name[lang], authorPhoto: null, rating: 5, text: t.t1[lang], relativeTime: "" },
-    { authorName: t.t2Name[lang], authorPhoto: null, rating: 5, text: t.t2[lang], relativeTime: "" },
-    { authorName: t.t3Name[lang], authorPhoto: null, rating: 5, text: t.t3[lang], relativeTime: "" },
+    { authorName: t.t1Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t1[lang], relativeTime: "" },
+    { authorName: t.t2Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t2[lang], relativeTime: "" },
+    { authorName: t.t3Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t3[lang], relativeTime: "" },
   ];
 
   const reviews = data?.available && data.reviews.length > 0 ? data.reviews : fallback;
@@ -56,43 +56,59 @@ export function Testimonials() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {reviews.slice(0, 6).map((item, i) => (
             <Reveal key={`${item.authorName}-${i}`} delay={i * 110}>
-              <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
-                <div className="flex gap-1 text-gold">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <Star
-                      key={s}
-                      size={16}
-                      fill={s < item.rating ? "currentColor" : "none"}
-                      strokeWidth={s < item.rating ? 0 : 1}
-                    />
-                  ))}
-                </div>
-                <blockquote className="mt-5 flex-1 font-serif text-lg leading-relaxed text-foreground">
-                  “{item.text}”
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3">
-                  {item.authorPhoto ? (
-                    <img
-                      src={item.authorPhoto}
-                      alt=""
-                      className="h-9 w-9 rounded-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-xs font-semibold text-gold">
-                      {item.authorName.charAt(0)}
-                    </span>
-                  )}
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground">
-                      {item.authorName}
-                    </p>
-                    {item.relativeTime && (
-                      <p className="text-[0.7rem] text-muted-foreground">{item.relativeTime}</p>
-                    )}
+              <a
+                href={item.authorUrl ?? siteConfig.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={
+                  lang === "pt"
+                    ? `Ver avaliação de ${item.authorName} no Google`
+                    : `View ${item.authorName}'s review on Google`
+                }
+                className="group block h-full transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-2xl"
+              >
+                <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 group-hover:border-gold/50 group-hover:shadow-xl group-hover:shadow-gold/5">
+                  <div className="flex gap-1 text-gold">
+                    {Array.from({ length: 5 }).map((_, s) => (
+                      <Star
+                        key={s}
+                        size={16}
+                        fill={s < item.rating ? "currentColor" : "none"}
+                        strokeWidth={s < item.rating ? 0 : 1}
+                      />
+                    ))}
                   </div>
-                </figcaption>
-              </figure>
+                  <blockquote className="mt-5 flex-1 font-serif text-lg leading-relaxed text-foreground">
+                    “{item.text}”
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3">
+                    {item.authorPhoto ? (
+                      <img
+                        src={item.authorPhoto}
+                        alt=""
+                        className="h-9 w-9 rounded-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-xs font-semibold text-gold">
+                        {item.authorName.charAt(0)}
+                      </span>
+                    )}
+                    <div className="flex-1">
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground">
+                        {item.authorName}
+                      </p>
+                      {item.relativeTime && (
+                        <p className="text-[0.7rem] text-muted-foreground">{item.relativeTime}</p>
+                      )}
+                    </div>
+                    <ExternalLink
+                      size={14}
+                      className="text-muted-foreground transition-colors group-hover:text-gold"
+                    />
+                  </figcaption>
+                </figure>
+              </a>
             </Reveal>
           ))}
         </div>
