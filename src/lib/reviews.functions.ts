@@ -3,6 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 export type GoogleReview = {
   authorName: string;
   authorPhoto: string | null;
+  authorUrl: string | null;
   rating: number;
   text: string;
   relativeTime: string;

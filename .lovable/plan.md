@@ -1,25 +1,31 @@
-## Contexto
+## Objetivo
+Transformar os cards da seção "O que dizem nossos clientes" em elementos clicáveis que direcionem para as avaliações do Google, mantendo o estilo atual de depoimentos reais.
 
-Atualmente o link "Depoimentos" no navbar está apontando para `siteConfig.googleMapsUrl`, que abre o Google Maps. O usuário quer que ele abra as avaliações/reviews dos clientes no Google.
+## Análise técnica
+A API do Google Places não retorna um URL individual por review. Portanto, cada card abrirá a página geral de reviews do estabelecimento (`siteConfig.googleReviewsUrl`).
 
 ## Alterações propostas
 
-### 1. `src/lib/site-config.ts`
+### 1. `src/lib/reviews.functions.ts`
+Adicionar `authorUrl` (quando disponível) ao tipo `GoogleReview`. A API Places às vezes retorna `author_url` no review; se presente, usamos ele. Caso contrário, fallback para `googleReviewsUrl`.
 
-Adicionar uma nova propriedade `googleReviewsUrl` construída a partir do `googleMapsUrl` existente (extraíndo o Place ID) ou do Place ID já conhecido (`ChIJB2YvNDv3zpQRScehZSCb9CA`), apontando para:
+### 2. `src/components/site/Testimonials.tsx`
+- Envolver cada `<figure>` (card de depoimento) em uma tag `<a>` quando houver um link válido.
+- Manter o visual atual: borda, fundo `bg-card`, tipografia, foto do autor e estrelas.
+- Adicionar feedback visual de interatividade:
+  - `cursor-pointer`
+  - Leve elevação ao passar o mouse (`hover:shadow-lg hover:-translate-y-0.5 transition-all`)
+- Para os depoimentos fallback (sem link individual), o card também será clicável e apontará para `siteConfig.googleReviewsUrl`.
+- Aplicar `target="_blank" rel="noopener noreferrer"` em todos os links.
 
-```
-https://search.google.com/local/reviews?placeid=ChIJB2YvNDv3zpQRScehZSCb9CA
-```
+### 3. `src/lib/site-config.ts`
+Verificar se `googleReviewsUrl` está definido (já está) — nenhuma alteração necessária.
 
-### 2. `src/components/site/Navbar.tsx`
+## Detalhes técnicos
+- Cards reais do Google: link direto quando `author_url` existir; senão, link para a página geral de reviews.
+- Cards fallback (placeholder): link para a página geral de reviews.
+- Acessibilidade: a tag `<a>` envolve o `<figure>` inteiro; o texto do card continua legível por leitores de tela.
+- O link "Ver todas as avaliações no Google" no final da seção permanece inalterado.
 
-Alterar o link "Depoimentos" (`depoimentos`) para usar a nova `googleReviewsUrl` no lugar de `googleMapsUrl`. Manter o comportamento de abrir em nova aba (`target="_blank"`, `rel="noopener noreferrer"`).
-
-### 3. `src/components/site/Testimonials.tsx` (verificar)
-
-Se houver algum CTA dentro da seção interna de depoimentos que atualmente leva ao Google Maps, considerar também redirecioná-lo para a URL de reviews para consistência.
-
-## Resultado 
-
-Clicar em "Depoimentos" no menu (desktop e mobile) abre diretamente a página de avaliações do Google da clínica em uma nova aba.
+## Resultado esperado
+Cada card da seção "O que dizem nossos clientes" será clicável, abrindo as avaliações do Google em uma nova aba, com leve animação de hover para indicar interatividade.
