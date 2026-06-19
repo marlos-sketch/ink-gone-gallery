@@ -1,31 +1,15 @@
-## Objetivo
-Transformar os cards da seção "O que dizem nossos clientes" em elementos clicáveis que direcionem para as avaliações do Google, mantendo o estilo atual de depoimentos reais.
+## Configurar Google Ads Tag (gtag.js)
 
-## Análise técnica
-A API do Google Places não retorna um URL individual por review. Portanto, cada card abrirá a página geral de reviews do estabelecimento (`siteConfig.googleReviewsUrl`).
+### Objetivo
+Adicionar a tag de conversão do Google Ads (gtag.js) ao site, conforme o código fornecido pelo usuário, com o ID `AW-18142049321`.
 
-## Alterações propostas
+### O que será feito
+1. **Local de inserção**: Inserir os dois blocos de script (`gtag.js` e `config`) dentro do `<head>` do layout raiz do site (`src/routes/__root.tsx`).
+2. **Abordagem**: Como o TanStack Start gerencia o `<head>` via `HeadContent`, o script será colocado diretamente no `RootShell`, antes do `<HeadContent />`, garantindo que carregue no `<head>` do HTML em todas as páginas.
+3. **Script inline**: O script de carregamento (`async`) e o script de configuração (`window.dataLayer`, `gtag`) serão inseridos como tags `<script>` nativas no JSX do `RootShell`.
 
-### 1. `src/lib/reviews.functions.ts`
-Adicionar `authorUrl` (quando disponível) ao tipo `GoogleReview`. A API Places às vezes retorna `author_url` no review; se presente, usamos ele. Caso contrário, fallback para `googleReviewsUrl`.
+### Resultado esperado
+- A tag gtag do Google Ads será executada em todas as páginas do site.
+- Dados de conversão começarão a ser enviados para a conta `AW-18142049321`.
 
-### 2. `src/components/site/Testimonials.tsx`
-- Envolver cada `<figure>` (card de depoimento) em uma tag `<a>` quando houver um link válido.
-- Manter o visual atual: borda, fundo `bg-card`, tipografia, foto do autor e estrelas.
-- Adicionar feedback visual de interatividade:
-  - `cursor-pointer`
-  - Leve elevação ao passar o mouse (`hover:shadow-lg hover:-translate-y-0.5 transition-all`)
-- Para os depoimentos fallback (sem link individual), o card também será clicável e apontará para `siteConfig.googleReviewsUrl`.
-- Aplicar `target="_blank" rel="noopener noreferrer"` em todos os links.
-
-### 3. `src/lib/site-config.ts`
-Verificar se `googleReviewsUrl` está definido (já está) — nenhuma alteração necessária.
-
-## Detalhes técnicos
-- Cards reais do Google: link direto quando `author_url` existir; senão, link para a página geral de reviews.
-- Cards fallback (placeholder): link para a página geral de reviews.
-- Acessibilidade: a tag `<a>` envolve o `<figure>` inteiro; o texto do card continua legível por leitores de tela.
-- O link "Ver todas as avaliações no Google" no final da seção permanece inalterado.
-
-## Resultado esperado
-Cada card da seção "O que dizem nossos clientes" será clicável, abrindo as avaliações do Google em uma nova aba, com leve animação de hover para indicar interatividade.
+Nenhuma mudança de backend ou nova dependência é necessária.

@@ -84,6 +84,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=AW-18142049321",
+        async: true,
+      },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-18142049321');",
+      },
+    ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
