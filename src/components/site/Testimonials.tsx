@@ -97,10 +97,10 @@ export function Testimonials() {
           ))}
         </div>
 
-        {data?.available && data.placeUrl && (
+        {data?.available && (
           <Reveal className="mt-10 text-center">
             <a
-              href={data.placeUrl}
+              href={siteConfig.googleReviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground transition-colors hover:text-gold"
