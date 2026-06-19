@@ -19,9 +19,9 @@ export function Testimonials() {
 
   // Fallback (depoimentos placeholder) caso Google não esteja configurado / falhe
   const fallback: GoogleReview[] = [
-    { authorName: t.t1Name[lang], authorPhoto: null, rating: 5, text: t.t1[lang], relativeTime: "" },
-    { authorName: t.t2Name[lang], authorPhoto: null, rating: 5, text: t.t2[lang], relativeTime: "" },
-    { authorName: t.t3Name[lang], authorPhoto: null, rating: 5, text: t.t3[lang], relativeTime: "" },
+    { authorName: t.t1Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t1[lang], relativeTime: "" },
+    { authorName: t.t2Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t2[lang], relativeTime: "" },
+    { authorName: t.t3Name[lang], authorPhoto: null, authorUrl: null, rating: 5, text: t.t3[lang], relativeTime: "" },
   ];
 
   const reviews = data?.available && data.reviews.length > 0 ? data.reviews : fallback;
