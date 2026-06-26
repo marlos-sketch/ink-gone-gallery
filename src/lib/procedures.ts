@@ -64,8 +64,8 @@ export const procedures: Procedure[] = [
       ],
     },
     whatsappMessage: {
-      pt: "Olá! Tenho interesse no procedimento de Botox.",
-      en: "Hello! I'm interested in the Botox procedure.",
+      pt: "Olá! Tenho interesse no procedimento de Toxina Botulínica.",
+      en: "Hello! I'm interested in the Botulinum Toxin procedure.",
     },
   },
   {
