@@ -28,7 +28,7 @@ export const procedures: Procedure[] = [
   {
     slug: "botox",
     icon: Syringe,
-    name: { pt: "Botox", en: "Botox" },
+    name: { pt: "Toxina Botulínica", en: "Botulinum Toxin" },
     shortDesc: {
       pt: "Suaviza rugas de expressão e devolve frescor ao olhar.",
       en: "Softens expression lines and brings freshness back to the gaze.",
@@ -64,8 +64,8 @@ export const procedures: Procedure[] = [
       ],
     },
     whatsappMessage: {
-      pt: "Olá! Tenho interesse no procedimento de Botox.",
-      en: "Hello! I'm interested in the Botox procedure.",
+      pt: "Olá! Tenho interesse no procedimento de Toxina Botulínica.",
+      en: "Hello! I'm interested in the Botulinum Toxin procedure.",
     },
   },
   {
@@ -212,8 +212,8 @@ export const procedures: Procedure[] = [
       en: "Balance of facial proportions with technique and good sense.",
     },
     longDesc: {
-      pt: "Combinação personalizada de procedimentos (preenchimento, bioestimuladores, botox) para equilibrar as proporções do rosto, ressaltar traços e devolver suavidade.",
-      en: "Personalized combination of procedures (filler, biostimulators, botox) to balance facial proportions, highlight features and restore softness.",
+      pt: "Combinação personalizada de procedimentos (preenchimento, bioestimuladores, toxina botulínica) para equilibrar as proporções do rosto, ressaltar traços e devolver suavidade.",
+      en: "Personalized combination of procedures (filler, biostimulators, botulinum toxin) to balance facial proportions, highlight features and restore softness.",
     },
     benefits: {
       pt: [
