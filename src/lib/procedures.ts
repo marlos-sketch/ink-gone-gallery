@@ -212,8 +212,8 @@ export const procedures: Procedure[] = [
       en: "Balance of facial proportions with technique and good sense.",
     },
     longDesc: {
-      pt: "Combinação personalizada de procedimentos (preenchimento, bioestimuladores, botox) para equilibrar as proporções do rosto, ressaltar traços e devolver suavidade.",
-      en: "Personalized combination of procedures (filler, biostimulators, botox) to balance facial proportions, highlight features and restore softness.",
+      pt: "Combinação personalizada de procedimentos (preenchimento, bioestimuladores, toxina botulínica) para equilibrar as proporções do rosto, ressaltar traços e devolver suavidade.",
+      en: "Personalized combination of procedures (filler, biostimulators, botulinum toxin) to balance facial proportions, highlight features and restore softness.",
     },
     benefits: {
       pt: [
