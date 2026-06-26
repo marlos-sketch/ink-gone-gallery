@@ -28,7 +28,7 @@ export const procedures: Procedure[] = [
   {
     slug: "botox",
     icon: Syringe,
-    name: { pt: "Botox", en: "Botox" },
+    name: { pt: "Toxina Botulínica", en: "Botulinum Toxin" },
     shortDesc: {
       pt: "Suaviza rugas de expressão e devolve frescor ao olhar.",
       en: "Softens expression lines and brings freshness back to the gaze.",
