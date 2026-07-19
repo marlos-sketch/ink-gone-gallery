@@ -13,6 +13,7 @@ import { Contact } from "@/components/site/Contact";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { DidYouKnow } from "@/components/site/DidYouKnow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
