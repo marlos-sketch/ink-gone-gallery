@@ -63,6 +63,7 @@ function Index() {
         <Services />
         <Procedures />
         <Results />
+        <DidYouKnow />
         <Process />
         <WhyUs />
         <Testimonials />
