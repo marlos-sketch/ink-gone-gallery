@@ -167,7 +167,7 @@ export const translations = {
     q1: { pt: "A remoção dói?", en: "Does removal hurt?" },
     a1: { pt: "Há um desconforto durante a sessão, mas utilizamos recursos para deixar o procedimento o mais confortável possível.", en: "There is some discomfort during the session, but we use resources to make the procedure as comfortable as possible." },
     q2: { pt: "Quantas sessões são necessárias?", en: "How many sessions are needed?" },
-    a2: { pt: "Depende do pigmento, da cor e da sua pele. Definimos o número estimado na avaliação.", en: "It depends on the pigment, color and your skin. We define the estimated number during the assessment." },
+    a2: { pt: "Depende do pigmento, da cor e da sua pele. Definimos o número estimado na avaliação, em média de 3 a 4 sessões .", en: "It depends on the pigment, color and your skin. We define the estimated number during the assessment." },
     q3: { pt: "Qual o intervalo entre as sessões?", en: "What is the interval between sessions?" },
     a3: { pt: "Em geral respeitamos um intervalo para a pele cicatrizar e o organismo eliminar o pigmento.", en: "We generally respect an interval for the skin to heal and the body to eliminate the pigment." },
     q4: { pt: "Funciona em micropigmentação antiga?", en: "Does it work on old micropigmentation?" },
