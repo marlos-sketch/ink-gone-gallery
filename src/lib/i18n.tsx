@@ -169,7 +169,7 @@ export const translations = {
     q2: { pt: "Quantas sessões são necessárias?", en: "How many sessions are needed?" },
     a2: { pt: "Depende do pigmento, da cor e da sua pele. Definimos o número estimado na avaliação, em média de 3 a 4 sessões .", en: "It depends on the pigment, color and your skin. We define the estimated number during the assessment." },
     q3: { pt: "Qual o intervalo entre as sessões?", en: "What is the interval between sessions?" },
-    a3: { pt: "Em geral respeitamos um intervalo para a pele cicatrizar e o organismo eliminar o pigmento.", en: "We generally respect an interval for the skin to heal and the body to eliminate the pigment." },
+    a3: { pt: "Em geral respeitamos um intervalo mínimo de 30 dias para a pele  e o organismo eliminar o pigmento em caso de micropigmentação, e em tatuagens menores. Quando o assunto é tatuagens maioes prolongamos o intervalo para 60 ou 90 dias.", en: "We generally respect an interval for the skin to heal and the body to eliminate the pigment." },
     q4: { pt: "Funciona em micropigmentação antiga?", en: "Does it work on old micropigmentation?" },
     a4: { pt: "Sim. Avaliamos cada caso para indicar o melhor protocolo de correção ou remoção.", en: "Yes. We assess each case to indicate the best correction or removal protocol." },
   },
